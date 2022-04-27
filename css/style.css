@@ -1,0 +1,557 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 23px;
+}
+
+@font-face {
+	font-family: "Fredoka";
+	src: url("../font/Fredoka-VariableFont_wdth,wght.ttf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "RoundyRainbows";
+	src: url("../font/RoundyRainbows.ttf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Acidic";
+	src: url("../font/Acidic-Y7Ov.ttf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "NotoSansDisplay";
+	src: url("../font/NotoSansDisplay-Regular.ttf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* A */
+.ant-content-wrap {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	font-family: RoundyRainbows;
+}
+
+.ant {
+	position: relative;
+}
+
+.ant-bg {
+	width: 1400px;
+	height: auto;
+}
+
+.ant .ant-eye {
+	position: absolute;
+	left: 250px;
+	top: 300px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.ant .ant-eye:hover {
+	background-color: #FFFFFF;
+}
+
+.ant-title {
+	position: absolute;
+	left: 48px;
+	top: 10px;
+	font-family: RoundyRainbows;
+	font-size: 72px;
+}
+
+.ant .ant-b {
+	position: absolute;
+	too: 0;
+	top: 330px;
+	left: 400px;
+	font-size: 36px;
+	color: #090103;
+}
+
+.ant .ant-b:hover,
+.ant .ant-c:hover,
+.ant .ant-d:hover,
+.ant .ant-e:hover {
+	color: #FFFFFF;
+}
+
+.ant .ant-c {
+	position: absolute;
+	too: 0;
+	top: 300px;
+	left: 550px;
+	font-size: 30px;
+	color: #090103;
+}
+
+.ant .ant-d {
+	position: absolute;
+	too: 0;
+	top: 310px;
+	left: 700px;
+	font-size: 16px;
+	color: #090103;
+}
+
+.ant .ant-e {
+	position: absolute;
+	top: 330px;
+	left: 810px;
+	font-size: 80px;
+	color: #090103;
+}
+
+.ant-text {
+	position: absolute;
+	left: 100px;
+	bottom: 100px;
+	font-family: Fredoka;
+	font-size: 14px;
+	color: #000000
+}
+
+
+.ant-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 300px;
+	background: linear-gradient(#ffffff, #ffff66);
+	z-index: -1;
+}
+
+/* B */
+.war-wrap {
+	position: relative;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/ukraine_img.png");
+	background-size: cover;
+}
+
+.war-content-wrap {
+	justify-content: center;
+	align-items: center;
+}
+
+.ukraine-title {
+	position: absolute;
+	top: 0px;
+	font-family: "Acidic";
+	font-size: 105px;
+	color: #090103;
+}
+
+.war-bottom {
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	font-size: 72px;
+	z-index: 999;
+	justify-content: space-between;
+	padding: 0 48px;
+}
+
+.war-bottom a {
+	color: red;
+	font-size: 24px;
+}
+
+
+/*C*/
+
+.city-wrap {
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/shanghai.gif");
+	background-size: 500px auto;
+}
+
+
+.city-mask-content {
+	width: 200px;
+	height: 150px;
+	position: fixed;
+	border: 2px solid red;
+	background: #ffde3b;
+}
+
+.city-mask-content2 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 60px;
+	left: 40px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content3 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 708px;
+	left: 409px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content4 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 650px;
+	left: 810px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content5 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 30px;
+	left: 990px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content6 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 561px;
+	left: 1340px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content7 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 270px;
+	left: 1040px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content8 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 560px;
+	left: 930px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content9 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 620px;
+	left: 140px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content10 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 90px;
+	left: 330px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content11 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: -50px;
+	left: 400px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+.city-mask-content12 {
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	top: 450px;
+	left: -90px;
+	border: 1px solid red;
+	background: yellow;
+}
+
+
+
+/* D */
+.computer-wrap {
+	position: relative;
+}
+
+.computer-content-wrap {
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.computer-img {
+	width: 550px;
+}
+
+.computer-title {
+	position: absolute;
+	left: 510px;
+	top: 40px;
+	font-family: "Acidic";
+	font-size: 24px;
+}
+
+/* E */
+.selector {
+	position: fixed;
+	top: 24px;
+	left: 24px;
+	width: 100%;
+}
+
+.selector select {
+	width: 80%;
+	font-size: 16px;
+}
+
+tr.tr:hover {
+	cursor: pointer;
+}
+
+.archive-wrap {
+	position: relative;
+	padding: 24px 24px 48px 24px;
+}
+
+.table {
+	margin-top: 60px;
+}
+
+tr .oder {
+	width: 5%;
+}
+
+
+tr .type {
+	width: 30%;
+	font-size: 20px;
+	font-family: "NotoSansDisplay";
+	font-weight: 400;
+
+}
+
+tr .year {
+	width: 13%;
+}
+
+tr .name {
+	width: 40%;
+	font-weight: 530;
+	font-style: italic;
+}
+
+tr .person {
+	width: 12%;
+}
+
+.intro {
+	width: 100%;
+	;
+}
+
+.bottom {
+	width: 100%;
+	padding: 0 24px;
+	position: fixed;
+	left: 0px;
+	bottom: 24px;
+	justify-content: space-between;
+}
+
+.flex-normal {
+	display: flex;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.left12 {
+	margin-left: 12px;
+}
+
+.left24 {
+	margin-left: 24px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#nav a {
+	padding: 4px 24px;
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	border-radius: 16px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.8);
+	font-weight: bold;
+	margin-right: 12px;
+}
+
+
+button {
+	padding: 6px 24px;
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	border-radius: 16px;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.left48 {
+	margin-left: 48px;
+}
+
+.order-btn {
+	width: 18%;
+}
+
+.order-btn a {
+	padding: 6px 24px;
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	border-radius: 16px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.8);
+	font-weight: bold;
+	margin-right: 12px;
+}
+
+#up-arrows {
+	transform: rotate(-90deg);
+}
+
+.size12 {
+	font-size: 12px;
+}
+
+.size14 {
+	font-size: 14px;
+}
+
+.size16 {
+	font-size: 16px;
+}
+
+.name div {
+	padding: 4px 0;
+	font-style: normal;
+}
+
+.name div a {
+	display: inline-block;
+	word-break: break-all;
+}
+
+.mask-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.mask-content {
+	position: relative;
+	width: 600px;
+	height: 600px;
+	border-radius: 24px;
+	align-items: center;
+}
+
+.mask-context {
+	position: relative;
+	width: 550px;
+	height: 550px;
+	background-image: url(../images/img1.png);
+	background-size: cover;
+}
+
+.mask-context .text {
+	position: absolute;
+	left: 180px;
+	top: 150px;
+	width: 300px;
+	font-size: 17px;
+	line-height: 22px;
+}
+
+#close {
+	position: absolute;
+	bottom: 160px;
+}
+
+#about {
+	position: fixed;
+	right: 24px;
+}
+.search{
+	margin-left: 24px;
+}
+.search-input{
+	width: 250px;
+	font-size: 14px;
+}
+.search-btn{
+	border-radius: 6px;
+	margin-left: 12px;
+}
+/* athena yating wang */
