@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Digital Archive of Online Art Exhibitions</title>
+    <link href="./css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="archive-wrap">
+        <div class="flex-normal align-items-center selector">
+            <h1><i>Mapping the Infinite Land:</i>Archive of Online Exhibitions</h1>
+            <div class="flex-normal search">
+                <input type="text" id="keywords" class="search-input" placeholder="title/author" />
+                <button class="search-btn" id="search-btn">search</button>
+            </div>
+        </div>
+        <table class="table" id="table" cellpadding="0" cellspacing="0">
+        </table>
+        <div class="bg"></div>
+    </div>
+
+    <script src="./js/data2.js"></script>
+    <script>
+        var table = document.getElementById('table')
+        var keywords = document.getElementById('keywords')
+        var searchBtn = document.getElementById('search-btn')
+        var newList = JSON.parse(JSON.stringify(list))
+        var isSort = false;
+        var sort = document.getElementById('sort')
+
+        getRender()
+
+        function getRender() {
+            table.innerHTML = ''
+            for (let i = 0; i < list.length; i++) {
+                var year = list[i].year.replace('年', '/')
+                year = year.replace('月', '/')
+                year = year.replace('日', '')
+                var tr = document.createElement('tr');
+                tr.classList.add('tr')
+                tr.innerHTML = `
+							<td class="oder">${list[i].order}</td>
+							<td class="keywords">${list[i].keywords}</td>
+							<td class="name">
+                                <a href="${list[i].url}">
+                                ${list[i].title}
+                            </a>
+                            </td>
+							<td class="author">${list[i].author}</td>
+                            <td class="year">${year}</td>
+					`
+
+                var intrTr = document.createElement('tr');
+                intrTr.classList.add('intro')
+                intrTr.classList.add('hide')
+
+                var Acloumn = '';
+                var Bcloumn = '';
+                var Ccloumn = '';
+                var Dcloumn = '';
+                var Ecloumn = '';
+                var Fcloumn = '';
+                var Gcloumn = '';
+                var Hcloumn = '';
+                var Icloumn = '';
+                var Jcloumn = '';
+                var Kcloumn = '';
+                var Lcloumn = '';
+                var Mcloumn = '';
+                var Ncloumn = '';
+                var Ocloumn = '';
+                var Pcloumn = '';
+                if (list[i].info.A) {
+                    Acloumn = `
+							<div>${list[i].info.A}</div>
+						`
+                }
+                if (list[i].info.B) {
+                    Bcloumn = `
+							<div>${list[i].info.B}</div>
+						`
+                }
+
+                if (list[i].info.C) {
+                    Ccloumn = `
+							<div>${list[i].info.C}</div>
+						`
+                }
+
+                if (list[i].info.D) {
+                    Dcloumn = `
+							<div>${list[i].info.D}</div>
+						`
+                }
+                if (list[i].info.E) {
+                    Ecloumn = `
+							<div>${list[i].info.E}</div>
+						`
+                }
+                if (list[i].info.F) {
+                    Fcloumn = `
+							<div>${list[i].info.F}</div>
+						`
+                }
+                if (list[i].info.G) {
+                    Gcloumn = `
+							<div>${list[i].info.G}</div>
+						`
+                }
+                if (list[i].info.H) {
+                    Hcloumn = `
+							<div>${list[i].info.H}</div>
+						`
+                }
+                if (list[i].info.I) {
+                    Icloumn = `
+							<div>${list[i].info.I}</div>
+						`
+                }
+                if (list[i].info.J) {
+                    Jcloumn = `
+							<div>${list[i].info.J}</div>
+						`
+                }
+                if (list[i].info.K) {
+                    if (list[i].info.K.indexOf('http') != -1) {
+                        Kcloumn = `
+								<div><a href="${list[i].info.K}">${list[i].info.K}</a></div>
+							`
+                    } else {
+                        Kcloumn = `
+								<div>${list[i].info.K}</div>
+							`
+                    }
+                }
+                if (list[i].info.L) {
+                    if (list[i].info.L.indexOf('http') != -1) {
+                        Lcloumn = `
+								<div><a href="${list[i].info.L}">${list[i].info.L}</a></div>
+							`
+                    } else {
+                        Lcloumn = `
+								<div>${list[i].info.L}</div>
+							`
+                    }
+
+                }
+                if (list[i].info.M) {
+                    if (list[i].info.M.indexOf('http') != -1) {
+                        Mcloumn = `
+								<div><a href="${list[i].info.M}">${list[i].info.M}</a></div>
+							`
+                    } else {
+                        Mcloumn = `
+								<div>${list[i].info.M}</div>
+							`
+                    }
+                }
+                if (list[i].info.N) {
+                    Ncloumn = `
+							<div>${list[i].info.N}</div>
+						`
+                }
+                if (list[i].info.O) {
+                    Ocloumn = `
+							<div>${list[i].info.O}</div>
+						`
+                }
+                if (list[i].info.P) {
+                    Pcloumn = `
+							<div>${list[i].info.P}</div>
+						`
+                }
+
+                intrTr.innerHTML = `
+						<td class="oder"></td>
+						<td class="keywords"></td>
+						<td class="name">
+							${Acloumn}
+							${Bcloumn}
+							${Ccloumn}
+							${Dcloumn}
+							${Ecloumn}
+							${Fcloumn}
+							${Gcloumn}
+							${Hcloumn}
+							${Icloumn}
+							${Jcloumn}
+							${Kcloumn}
+							${Lcloumn}
+							${Mcloumn}
+							${Ncloumn}
+							${Ocloumn}
+							${Pcloumn}
+						</td>
+						<td class="author"></td>
+                        <td class="year"></td>
+					`
+
+                tr.addEventListener('click', function() {
+                    var info = this.nextSibling
+                    if (info.classList.contains('hide')) {
+                        info.classList.remove('hide')
+                    } else {
+                        info.classList.add('hide')
+                    }
+                })
+                table.appendChild(tr)
+                table.appendChild(intrTr)
+            }
+        }
+
+        searchBtn.addEventListener('click', function() {
+            list = newList
+
+            let val = keywords.value.trim()
+            val = val.toLowerCase()
+            if (val == '') {
+                list = newList
+            }
+
+            const newArr = JSON.parse(JSON.stringify(list))
+            list = newArr.filter(function(item) {
+                if (item.author.toLowerCase().indexOf(val) != -1) {
+                    return item
+                }
+                if (item.title.toLowerCase().indexOf(val) != -1) {
+                    return item
+                }
+            })
+
+            getRender()
+            keywords.value = ''
+            searchMask.classList.add('hide')
+        })
+    </script>
+</body>
+
+</html>

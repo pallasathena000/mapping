@@ -2,212 +2,237 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Digital Archive of Online Art Exhibitions</title>
-	<link href="./css/style.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title>Digital Archive of Online Art Exhibitions</title>
+    <link href="./css/style.css" rel="stylesheet" />
 </head>
 <!-- Ant Hēa is an anagram for Athēna by athena yating wang -->
 
 <body>
 
-	<div class="archive-wrap">
-		<div class="flex-normal align-items-center selector">
-			<h1><i>Mapping the Infinite Land</i>: Archive of Online Exhibitions</h1>
-			<div class="flex-normal search">
-				<input  type="text" id="keywords" class="search-input" placeholder="type/name/person"/>
-				<button class="search-btn" id="search-btn">search</button>
-			</div>
-			<button id="about">About</button>
-		</div>
-		<table class="table" id="table" cellpadding="0" cellspacing="0">
-		</table>
-		<div class="flex-normal bottom">
-			<div class="left">
-				<button id="top">∧</button>
-			</div>
-<!-- 			<div class="flex-normal align-items-center right">
-				<button id="download">download</button>
-			</div> -->
-		</div>
-	</div>
-	<div class="flex-normal mask-wrap" id="mask">
-		<div class="mask-content flex-column">
-			<div class="mask-context">
-				<div class="text">
-					<h1>Archive of Online Exhibitions 2020-2022</h1>
+    <div class="archive-wrap">
+        <div class="flex-normal align-items-center selector">
+            <h1><i>Mapping the Infinite Land:</i>Archive of Online Exhibitions</h1>
+            <div class="flex-normal search">
+                <input type="text" id="keywords" class="search-input" placeholder="type/name/person" />
+                <button class="search-btn" id="search-btn">search</button>
+            </div>
+            <button id="sort">sort</button>
+            <div class="nav">
+                <a href="./library.html">library</a>
+                <a href="./other.html">other archives</a>
+            </div>
+        </div>
+        <table class="table" id="table" cellpadding="0" cellspacing="0">
+        </table>
+        <div class="flex-normal bottom">
+            <div class="left">
+                <button id="top">∧</button>
+            </div>
+        </div>
+    </div>
+    <button id="about">About</button>
+    <a href="https://www.instagram.com/athenawathena">
+        <button id="contact">contact</button>
+    </a>
+    <div class="flex-normal mask-wrap" id="startMask">
+        <div class="mask-content flex-column">
+            <div class="mask-context">
+                <div class="text">
+                    <h1>Archive of Online Exhibitions 2020-2022</h1>
 
-					Hi anonymous visitor &#x1f41c;! Welcome to the land of online art exhibitions.<br>
-					Now, if you are physically confined in one place,
-					don't forget your digital body can be connected to the Internet, where infinite possibilities
-					are
-					waiting. <br>
-					Feel free to roam around and explore some art!
+                    &nbsp;&nbsp;Hi anonymous visitor &#x1f41c;! Welcome to the land of online art exhibitions.<br> Now, if you are physically confined in one place, don't forget your digital body can be connected to the Internet, where infinite possibilities
+                    are waiting. <br> &nbsp;&nbsp;Feel free to roam around and explore some art!
 
-				</div>
-			</div>
-			<button id="close">Got it!</button>
-		</div>
-	</div>
-	<script src="./js/data.js"></script>
-	<script>
-		var table = document.getElementById('table')
-		var topBtn = document.getElementById('top')
-		var leftBtn = document.getElementById('left')
-		var rightBtn = document.getElementById('right')
-		var downloadBtn = document.getElementById('download')
-		var close = document.getElementById('close')
-		var about = document.getElementById('about')
-		var mask = document.getElementById('mask')
-		var keywords = document.getElementById('keywords')
-		var searchBtn = document.getElementById('search-btn')
-		var newList = JSON.parse(JSON.stringify(list))
+                </div>
+            </div>
+            <button id="close">Got it!</button>
+        </div>
+    </div>
+    <!-- <div class="flex-normal mask-wrap hide" id="searchMask">
+        <div class="mask-content2 flex-column">
+            <div class="search-bg flex-column">
+                <input type="text" id="keywords" class="search-input" placeholder="type/name/person" />
+                <button class="search-btn" id="search-btn">search</button>
+            </div>
+        </div>
+    </div> -->
+    <div class="flex-normal mask-wrap hide" id="contactMask">
+        <div class="mask-content2 flex-column">
+            <div class="contact-bg flex-column">
+                <div class="text1">contact</div>
+                <div class="text2">email:554030170@qq.com</div>
+                <div class="text3">Thank you for submission</div>
+                <a href="mailto:554030170@qq.com?subject=这是邮件的主题&body=这是邮件的内容" rel="nofollow"><button id="contactBtn">got it</button></a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/data.js"></script>
+    <script>
+        var table = document.getElementById('table')
+        var topBtn = document.getElementById('top')
+        var close = document.getElementById('close')
+        var about = document.getElementById('about')
+        var startMask = document.getElementById('startMask')
+            // var searchMask = document.getElementById('searchMask')
+            //var contactMask = document.getElementById('contactMask')
+        var keywords = document.getElementById('keywords')
+            //var contact = document.getElementById('contact')
+        var searchBtn = document.getElementById('search-btn')
+            // var search = document.getElementById('search')
+        var newList = JSON.parse(JSON.stringify(list))
+            // var contactBtn = document.getElementById('contactBtn')
+        var isSort = false;
+        var sort = document.getElementById('sort')
+        var data = null
 
-		
-		getRender()
-		
-		function getRender(){
-			table.innerHTML = ''
-			for (let i = 0; i < list.length; i++) {
-				var tr = document.createElement('tr');
-				tr.classList.add('tr')
-				tr.innerHTML = `
+        list = list.sort(() => Math.random() < 0.5 ? -1 : 1)
+        data = JSON.parse(JSON.stringify(list))
+        getRender()
+
+        function getRender() {
+            table.innerHTML = ''
+            for (let i = 0; i < list.length; i++) {
+                var tr = document.createElement('tr');
+                tr.classList.add('tr')
+                tr.innerHTML = `
 							<td class="oder">${i + 1}</td>
 							<td class="year">${list[i].year}</td>
 							<td class="type">${list[i].type}</td>
 							<td class="name">${list[i].name}</td>
 							<td class="person">${list[i].person}</td>
 					`
-			
-				var intrTr = document.createElement('tr');
-				intrTr.classList.add('intro')
-				intrTr.classList.add('hide')
-			
-				var Acloumn = '';
-				var Bcloumn = '';
-				var Ccloumn = '';
-				var Dcloumn = '';
-				var Ecloumn = '';
-				var Fcloumn = '';
-				var Gcloumn = '';
-				var Hcloumn = '';
-				var Icloumn = '';
-				var Jcloumn = '';
-				var Kcloumn = '';
-				var Lcloumn = '';
-				var Mcloumn = '';
-				var Ncloumn = '';
-				var Ocloumn = '';
-				var Pcloumn = '';
-				var Qcloumn = '';
-				if (list[i].info.A) {
-					Acloumn = `
+
+                var intrTr = document.createElement('tr');
+                intrTr.classList.add('intro')
+                intrTr.classList.add('hide')
+
+                var Acloumn = '';
+                var Bcloumn = '';
+                var Ccloumn = '';
+                var Dcloumn = '';
+                var Ecloumn = '';
+                var Fcloumn = '';
+                var Gcloumn = '';
+                var Hcloumn = '';
+                var Icloumn = '';
+                var Jcloumn = '';
+                var Kcloumn = '';
+                var Lcloumn = '';
+                var Mcloumn = '';
+                var Ncloumn = '';
+                var Ocloumn = '';
+                var Pcloumn = '';
+                var Qcloumn = '';
+                if (list[i].info.A) {
+                    Acloumn = `
 							<div>${list[i].info.A}</div>
 						`
-				}
-				if (list[i].info.B) {
-					Bcloumn = `
+                }
+                if (list[i].info.B) {
+                    Bcloumn = `
 							<div>${list[i].info.B}</div>
 						`
-				}
-			
-				if (list[i].info.C) {
-					Ccloumn = `
+                }
+
+                if (list[i].info.C) {
+                    Ccloumn = `
 							<div>${list[i].info.C}</div>
 						`
-				}
-			
-				if (list[i].info.D) {
-					Dcloumn = `
+                }
+
+                if (list[i].info.D) {
+                    Dcloumn = `
 							<div>${list[i].info.D}</div>
 						`
-				}
-				if (list[i].info.E) {
-					Ecloumn = `
+                }
+                if (list[i].info.E) {
+                    Ecloumn = `
 							<div>${list[i].info.E}</div>
 						`
-				}
-				if (list[i].info.F) {
-					Fcloumn = `
+                }
+                if (list[i].info.F) {
+                    Fcloumn = `
 							<div>${list[i].info.F}</div>
 						`
-				}
-				if (list[i].info.G) {
-					Gcloumn = `
+                }
+                if (list[i].info.G) {
+                    Gcloumn = `
 							<div>${list[i].info.G}</div>
 						`
-				}
-				if (list[i].info.H) {
-					Hcloumn = `
+                }
+                if (list[i].info.H) {
+                    Hcloumn = `
 							<div>${list[i].info.H}</div>
 						`
-				}
-				if (list[i].info.I) {
-					Icloumn = `
+                }
+                if (list[i].info.I) {
+                    Icloumn = `
 							<div>${list[i].info.I}</div>
 						`
-				}
-				if (list[i].info.J) {
-					Jcloumn = `
+                }
+                if (list[i].info.J) {
+                    Jcloumn = `
 							<div>${list[i].info.J}</div>
 						`
-				}
-				if (list[i].info.K) {
-					if (list[i].info.K.indexOf('http') != -1) {
-						Kcloumn = `
+                }
+                if (list[i].info.K) {
+                    if (list[i].info.K.indexOf('http') != -1) {
+                        Kcloumn = `
 								<div><a href="${list[i].info.K}">${list[i].info.K}</a></div>
 							`
-					} else {
-						Kcloumn = `
+                    } else {
+                        Kcloumn = `
 								<div>${list[i].info.K}</div>
 							`
-					}
-				}
-				if (list[i].info.L) {
-					if (list[i].info.L.indexOf('http') != -1) {
-						Lcloumn = `
+                    }
+                }
+                if (list[i].info.L) {
+                    if (list[i].info.L.indexOf('http') != -1) {
+                        Lcloumn = `
 								<div><a href="${list[i].info.L}">${list[i].info.L}</a></div>
 							`
-					} else {
-						Lcloumn = `
+                    } else {
+                        Lcloumn = `
 								<div>${list[i].info.L}</div>
 							`
-					}
-			
-				}
-				if (list[i].info.M) {
-					if (list[i].info.M.indexOf('http') != -1) {
-						Mcloumn = `
+                    }
+
+                }
+                if (list[i].info.M) {
+                    if (list[i].info.M.indexOf('http') != -1) {
+                        Mcloumn = `
 								<div><a href="${list[i].info.M}">${list[i].info.M}</a></div>
 							`
-					} else {
-						Mcloumn = `
+                    } else {
+                        Mcloumn = `
 								<div>${list[i].info.M}</div>
 							`
-					}
-				}
-				if (list[i].info.N) {
-					Ncloumn = `
+                    }
+                }
+                if (list[i].info.N) {
+                    Ncloumn = `
 							<div>${list[i].info.N}</div>
 						`
-				}
-				if (list[i].info.O) {
-					Ocloumn = `
+                }
+                if (list[i].info.O) {
+                    Ocloumn = `
 							<div>${list[i].info.O}</div>
 						`
-				}
-				if (list[i].info.P) {
-					Pcloumn = `
+                }
+                if (list[i].info.P) {
+                    Pcloumn = `
 							<div>${list[i].info.P}</div>
 						`
-				}
-			
-				if (list[i].info.Q.length > 0) {
-					for (var index = 0; index < list[i].info.Q.length; index++) {
-						Qcloumn += '<div><img src="' + list[i].info.Q[index] + '" style="width:500px"/></div>'
-					}
-				}
-			
-				intrTr.innerHTML = `
+                }
+
+                if (list[i].info.Q.length > 0) {
+                    for (var index = 0; index < list[i].info.Q.length; index++) {
+                        Qcloumn += '<div><img src="' + list[i].info.Q[index] + '" style="width:500px"/></div>'
+                    }
+                }
+
+                intrTr.innerHTML = `
 						<td class="oder"></td>
 						<td class="year"></td>
 						<td class="type"></td>
@@ -232,66 +257,94 @@
 						</td>
 						<td class="person"></td>
 					`
-				tr.addEventListener('mouseenter', function () {
-					this.style.backgroundColor = list[i].color
-				})
-				tr.addEventListener('mouseleave', function () {
-					this.style.backgroundColor = '#FFFFFF'
-				})
-			
-				tr.addEventListener('click', function () {
-					var info = this.nextSibling
-					if (info.classList.contains('hide')) {
-						info.classList.remove('hide')
-					} else {
-						info.classList.add('hide')
-					}
-					info.style.background = list[i].color
-				})
-				table.appendChild(tr)
-				table.appendChild(intrTr)
-			}
-		}
-		
+                tr.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = list[i].color
+                })
+                tr.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#FFFFFF'
+                })
 
-		topBtn.addEventListener('click', function () {
-			window.scrollTo(0, 0);
-		})
+                tr.addEventListener('click', function() {
+                    var info = this.nextSibling
+                    if (info.classList.contains('hide')) {
+                        info.classList.remove('hide')
+                    } else {
+                        info.classList.add('hide')
+                    }
+                    info.style.background = list[i].color
+                })
+                table.appendChild(tr)
+                table.appendChild(intrTr)
+            }
+        }
 
-		about.addEventListener('click', function () {
-			mask.classList.remove('hide')
-		})
-		close.addEventListener('click', function () {
-			this.parentNode.parentNode.classList.add('hide')
-		})
 
-		
-		console.log(searchBtn)
-		searchBtn.addEventListener('click',function(){
-			list = newList
-			
-			let val = keywords.value.trim()
-			val = val.toLowerCase()
-			if (val == ''){
-				list = newList
-			}
-			
-			const newArr =  JSON.parse(JSON.stringify(list))
-			list = newArr.filter(function(item){
-				if (item.name.toLowerCase().indexOf(val) != -1) {
-					return item
-				}
-				if (item.person.toLowerCase().indexOf(val) != -1) {
-					return item
-				}
-				if (item.type.toLowerCase().indexOf(val) != -1) {
-					return item
-				}
-			})
+        //search.addEventListener('click', function() {
+        // searchMask.classList.remove('hide')
+        // })
 
-			getRender()
-		})
-	</script>
+        sort.addEventListener('click', function() {
+            if (!isSort) {
+                list = newList
+                getRender()
+                isSort = true
+            } else {
+                list = data
+                getRender()
+                isSort = false
+            }
+        })
+
+        topBtn.addEventListener('click', function() {
+            window.scrollTo(0, 0);
+        })
+
+        about.addEventListener('click', function() {
+            if (startMask.classList.contains('hide')) {
+                startMask.classList.remove('hide')
+            } else {
+                startMask.classList.add('hide')
+            }
+        })
+
+        //  contact.addEventListener('click', function() {
+        //  contactMask.classList.remove('hide')
+        //  })
+        close.addEventListener('click', function() {
+            this.parentNode.parentNode.classList.add('hide')
+        })
+
+        // contactBtn.addEventListener('click', function() {
+        //  contactMask.classList.add('hide')
+        //  })
+
+        searchBtn.addEventListener('click', function() {
+            list = newList
+
+            let val = keywords.value.trim()
+            val = val.toLowerCase()
+            if (val == '') {
+                list = newList
+            }
+
+            const newArr = JSON.parse(JSON.stringify(list))
+            list = newArr.filter(function(item) {
+                if (item.name.toLowerCase().indexOf(val) != -1) {
+                    return item
+                }
+                if (item.person.toLowerCase().indexOf(val) != -1) {
+                    return item
+                }
+                if (item.type.toLowerCase().indexOf(val) != -1) {
+                    return item
+                }
+            })
+
+            getRender()
+            keywords.value = ''
+            searchMask.classList.add('hide')
+        })
+    </script>
 </body>
 
 </html>
