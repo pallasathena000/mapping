@@ -389,6 +389,7 @@ tr .year {
 
 tr .keywords {
     width: 10%;
+    font-family: "NotoSansDisplay";
 }
 
 tr .name {
