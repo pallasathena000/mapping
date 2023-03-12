@@ -11,12 +11,14 @@
 
     <div class="archive-wrap">
         <div class="flex-normal align-items-center selector">
-            <h1><i>Mapping the Infinite Land:</i>Archive of Online Exhibitions</h1>
-            <div class="flex-normal search">
+            <h1><i>Mapping the Infinite Land:</i>Library</h1>
+            <div class="flex-normal search search2">
                 <input type="text" id="keywords" class="search-input" placeholder="title/author" />
                 <button class="search-btn" id="search-btn">search</button>
             </div>
         </div>
+        <button id="intro">intro</button>
+        <button id="archive">archive</button>
         <table class="table" id="table" cellpadding="0" cellspacing="0">
         </table>
         <div class="bg"></div>
@@ -30,6 +32,8 @@
         var newList = JSON.parse(JSON.stringify(list))
         var isSort = false;
         var sort = document.getElementById('sort')
+        var intro = document.getElementById('intro')
+        var archive = document.getElementById('archive')
 
         getRender()
 
@@ -43,7 +47,7 @@
                 tr.classList.add('tr')
                 tr.innerHTML = `
 							<td class="oder">${list[i].order}</td>
-							<td class="keywords">${list[i].keywords}</td>
+							<td class="keywords ${list[i].order === "" ? 'cate' : ''}">${list[i].keywords}</td>
 							<td class="name">
                                 <a href="${list[i].url}">
                                 ${list[i].title}
@@ -178,7 +182,7 @@
                 intrTr.innerHTML = `
 						<td class="oder"></td>
 						<td class="keywords"></td>
-						<td class="name">
+						<td class="name data">
 							${Acloumn}
 							${Bcloumn}
 							${Ccloumn}
@@ -235,6 +239,14 @@
             getRender()
             keywords.value = ''
             searchMask.classList.add('hide')
+        })
+
+        intro.addEventListener("click", function() {
+            location.href = './intro.html'
+        })
+
+        archive.addEventListener("click", function() {
+            location.href = './index.html'
         })
     </script>
 </body>

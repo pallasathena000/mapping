@@ -388,7 +388,7 @@ tr .year {
 }
 
 tr .keywords {
-    width: 10%;
+    width: 18%;
     font-family: "NotoSansDisplay";
 }
 
@@ -408,11 +408,28 @@ tr .person {
 
 tr .author {
     width: 15%;
+    font-family: "NotoSansDisplay";
 }
+
+tr .data {
+    font-family: "NotoSansDisplay";
+}
+
+tr .data div {
+    font-size: 16px !important;
+    padding: 0 !important;
+}
+
+
+/* .cate {
+    display: flex;
+    border: 1px solid #000;
+    text-align: center;
+    border-radius: 6px;
+} */
 
 .intro {
     width: 100%;
-    ;
 }
 
 .bottom {
@@ -574,15 +591,37 @@ button:hover {
     z-index: 999999;
 }
 
-#contact {
+#intro {
     position: fixed;
+    top: 24px;
+    right: 140px;
+}
+
+#archive {
+    position: fixed;
+    top: 24px;
     right: 24px;
-    bottom: 24px;
+}
+
+#library2 {
+    position: fixed;
+    top: 24px;
+    right: 140px;
+}
+
+#intro2 {
+    position: fixed;
+    top: 24px;
+    right: 258px;
 }
 
 .search {
     position: fixed;
-    right: 140px;
+    right: 380px;
+}
+
+.search2 {
+    right: 250px !important;
 }
 
 .search-input {
@@ -647,7 +686,7 @@ button a {
 #sort {
     position: fixed;
     bottom: 24px;
-    left: 100px;
+    left: 24px;
 }
 
 .library {

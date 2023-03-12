@@ -18,23 +18,14 @@
                 <button class="search-btn" id="search-btn">search</button>
             </div>
             <button id="sort">sort</button>
-            <div class="nav">
-                <a href="./library.html">library</a>
-                <a href="./other.html">other archives</a>
-            </div>
+            <button id="intro2">intro</button>
+            <button id="library2">library</button>
         </div>
         <table class="table" id="table" cellpadding="0" cellspacing="0">
         </table>
-        <div class="flex-normal bottom">
-            <div class="left">
-                <button id="top">∧</button>
-            </div>
-        </div>
     </div>
     <button id="about">About</button>
-    <a href="https://www.instagram.com/athenawathena">
-        <button id="contact">contact</button>
-    </a>
+
     <div class="flex-normal mask-wrap" id="startMask">
         <div class="mask-content flex-column">
             <div class="mask-context">
@@ -70,7 +61,6 @@
     <script src="./js/data.js"></script>
     <script>
         var table = document.getElementById('table')
-        var topBtn = document.getElementById('top')
         var close = document.getElementById('close')
         var about = document.getElementById('about')
         var startMask = document.getElementById('startMask')
@@ -85,6 +75,8 @@
         var isSort = false;
         var sort = document.getElementById('sort')
         var data = null
+        var intro2 = document.getElementById('intro2')
+        var library2 = document.getElementById('library2')
 
         list = list.sort(() => Math.random() < 0.5 ? -1 : 1)
         data = JSON.parse(JSON.stringify(list))
@@ -295,9 +287,6 @@
             }
         })
 
-        topBtn.addEventListener('click', function() {
-            window.scrollTo(0, 0);
-        })
 
         about.addEventListener('click', function() {
             if (startMask.classList.contains('hide')) {
@@ -343,6 +332,14 @@
             getRender()
             keywords.value = ''
             searchMask.classList.add('hide')
+        })
+
+        intro2.addEventListener("click", function() {
+            location.href = './intro.html'
+        })
+
+        library2.addEventListener("click", function() {
+            location.href = './library.html'
         })
     </script>
 </body>
