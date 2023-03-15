@@ -1664,7 +1664,7 @@ list = [{
     },
     {
         order: 60,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/11/9",
         title: "CAC Presents | 陆扬：妄想世界 + 陸揚地獄",
         url: "https://mp.weixin.qq.com/s/WvZCWbrGHqb0GeBkMTXKkQ",
@@ -1690,7 +1690,7 @@ list = [{
     },
     {
         order: 61,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/11/11",
         title: "网络艺术，在世界范围恢复和传播",
         url: "https://mp.weixin.qq.com/s/BA-rcwwjnLAbIYIMWcBiHQ",
@@ -1716,7 +1716,7 @@ list = [{
     },
     {
         order: 62,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "1905/7/12",
         title: "疫期对话|e-flux创始人谈互联网艺术史与当下反思",
         url: "https://www.thepaper.cn/newsDetail_forward_7178394?from=singlemessage&isappinstalled=0",
@@ -1742,7 +1742,7 @@ list = [{
     },
     {
         order: 63,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/12/28",
         title: "CAC · News | ARTnews: 那些定义2020年的作品 —— Get Well Soon!",
         url: "https://mp.weixin.qq.com/s/uvq0V_wWA1-3lv7zwAY8NQ",
@@ -1768,7 +1768,7 @@ list = [{
     },
     {
         order: 64,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/11/20",
         title: "CAC · 展览 | We=Link：辺 —— 网络平行展正式上线",
         url: "https://mp.weixin.qq.com/s/u_SuvrKrAO9l-RVSnoSe_g",
@@ -1794,7 +1794,7 @@ list = [{
     },
     {
         order: 65,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/3/15",
         title: "21世纪的第二个十年，艺术市场终于迎来亚洲及数字时代？",
         url: "https://mp.weixin.qq.com/s/YTuHVJiGtwEbDfijPcWvIA",
@@ -1820,7 +1820,7 @@ list = [{
     },
     {
         order: 66,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020年12月18日",
         title: "虚拟未来：后数字时代的艺术",
         url: "https://mp.weixin.qq.com/s/JU2ZO4Dl5UUnFvYavs9p7A",
@@ -1846,7 +1846,7 @@ list = [{
     },
     {
         order: 67,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/11/2",
         title: "算法摄影时代的代理政治",
         url: "https://mp.weixin.qq.com/s/RMll0jjSInnPu6-a-oq1ag",
@@ -1872,7 +1872,7 @@ list = [{
     },
     {
         order: 68,
-        keywords: "Net Art 2020 2020",
+        keywords: "Net Art 2020",
         year: "2020/10/3",
         title: "看不见的图像：人类仍是观看的主体吗？",
         url: "https://mp.weixin.qq.com/s/HUezCn5Mifn6I3ebM-Rbqg",
